@@ -57,7 +57,7 @@ async def sentimentPolarityByYear(anio:int):
   polarities = reviews_games_items_df.query('release_date==@anio').sentiment.value_counts().to_dict()
   return {'Negative': polarities[0], 'Neutral': polarities[1], 'Positive': polarities[2]}
 
-## Funciónde recomendación por id del juego.
+## Función de recomendación por id del juego.
 
 @app.get('/user_recommendation/')
 async def gameRecommendation(id:int):
